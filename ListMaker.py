@@ -38,14 +38,13 @@ So far your list has {len(list)} items.
 print("\n")
 
 Input = input('Type "append" if you want to add an item or type "pop" to remove an item. ')
-
-
+#Function to append an item. Uses the ItemAdd input if you type append for the Input input (lol)
 def Add(ItemAdd):
 	list.append(ItemAdd)
-	
+#Function to remove an item. Uses the ItemRemove input if you type pop for the Input input
 def Remove(ItemRemove):
 	list.pop(int(ItemRemove))
-
+#Function to prompt user for the item to append. Gives a decision to append, pop or put list into a file.
 def AddLoop():
 	ItemAdd = input("What item do you want to append?: ")
 	Add(ItemAdd)
@@ -63,7 +62,7 @@ def AddLoop():
 			writer.writerows(list)
 	else:
 		print("Something went wrong, try again.")
-
+#Function to prompt user for the item to remove. Gives a decision to append, pop or put list into a file.
 def RemoveLoop():
 	ItemRemove = input("What item do you want to remove? (Type in the number that the item is in the list): ")
 	Remove(ItemRemove)
@@ -82,7 +81,7 @@ def RemoveLoop():
 	else:
 		print("Something went wrong, try again.")
 
-				
+#Main loop, if original Input input equals append or pop it'll move to that function.	
 while True:
 	if (Input == "append") or (Input == "Append"):
 		AddLoop()
